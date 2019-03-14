@@ -22,7 +22,11 @@ public class KalkulatorKredytowy extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		if(request.getParameter("wnioskowanaKwotaKredytu") == null || request.getParameter("wnioskowanaKwotaKredytu").equals("")) {
+		if(request.getParameter("wnioskowanaKwotaKredytu") == null || request.getParameter("wnioskowanaKwotaKredytu").equals("")
+				|| request.getParameter("iloscRat") == null || request.getParameter("iloscRat").equals("")
+				|| request.getParameter("oprocentowanie") == null || request.getParameter("oprocentowanie").equals("")
+				|| request.getParameter("oplataStala") == null || request.getParameter("oplataStala").equals("")
+				|| request.getParameter("rodzajRat") == null || request.getParameter("rodzajRat").equals("")) {
 			response.sendRedirect("/");
 		}
 		else {
