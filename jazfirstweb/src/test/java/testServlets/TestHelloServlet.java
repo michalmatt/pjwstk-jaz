@@ -17,12 +17,13 @@ public class TestHelloServlet extends Mockito {
 	public void servlet_should_not_greet_the_user_if_the_name_is_null() throws IOException {
 		HttpServletRequest request = mock(HttpServletRequest.class);
 		HttpServletResponse response = mock(HttpServletResponse.class);
-		HelloServlet servlet = new HelloServlet();
+		PrintWriter writer = mock(PrintWriter.class);
 		
 		when(request.getParameter("name")).thenReturn(null);
+		when(response.getWriter()).thenReturn(writer);
 		
+		HelloServlet servlet = new HelloServlet();
 		servlet.doPost(request, response);
-		
 		verify(response).sendRedirect("/");
 	}
 	
@@ -30,12 +31,13 @@ public class TestHelloServlet extends Mockito {
 	public void servlet_should_not_greet_the_user_if_the_name_is_empty() throws IOException {
 		HttpServletRequest request = mock(HttpServletRequest.class);
 		HttpServletResponse response = mock(HttpServletResponse.class);
-		HelloServlet servlet = new HelloServlet();
+		PrintWriter writer = mock(PrintWriter.class);
 		
 		when(request.getParameter("name")).thenReturn("");
+		when(response.getWriter()).thenReturn(writer);
 		
+		HelloServlet servlet = new HelloServlet();
 		servlet.doPost(request, response);
-		
 		verify(response).sendRedirect("/");
 	}
 	
@@ -49,7 +51,6 @@ public class TestHelloServlet extends Mockito {
 		when(response.getWriter()).thenReturn(writer);
 		
 		new HelloServlet().doPost(request, response);
-		
 		verify(writer).println("<h1>Hello jan</h1>");
 	}
 
