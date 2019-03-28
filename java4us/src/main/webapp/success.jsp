@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-<title>Insert title here</title>
+<title>Dziękujemy za zgłoszenie</title>
 </head>
 <body>
-	<form action="hello" method="post">
-		<label>Imię: <input type="text" id="name" name="name"/></label>
-		<input type="submit" value="wyslij"/>
-	</form>
+	<h1>Dziękujemy za zgłoszenie.</h1>
 </body>
 </html>

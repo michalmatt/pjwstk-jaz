@@ -13,9 +13,6 @@ import org.apache.commons.math3.util.Precision;
 @WebServlet("/kalkulatorkredytowy")
 public class KalkulatorKredytowy extends HttpServlet {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public static final int LICZBA_RAT_W_ROKU = 12;
