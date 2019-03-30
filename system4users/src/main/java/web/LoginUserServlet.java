@@ -30,9 +30,7 @@ public class LoginUserServlet extends HttpServlet {
 		User user = repository.getUserByName(request.getParameter("name"));
 		
 		if (user != null && user.getPassword().equals(request.getParameter("password"))) {
-			session.setAttribute("name", "mich-test");
-			session.setAttribute("password", user.getPassword());
-			session.setAttribute("email", user.getEmail());
+			session.setAttribute("user", user);
 			session.setAttribute("conf", null);
 			response.sendRedirect("profile.jsp");
 		}

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%
 	HttpServletResponse httpResponse = (HttpServletResponse) response;	
-	if (session.getAttribute("name") != null && session.getAttribute("password") != null && session.getAttribute("email") != null) {
+	if (session.getAttribute("user") != null) {
 		httpResponse.sendRedirect("profile.jsp");
 		return;
 	}

@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-<title>System4Users - premium</title>
+<title>System4Users - users</title>
 </head>
 <body>
-	<h3>Welcome to PREMIUM page on "System4Users"</h3>
-	<ul>
-		<li style="margin-top: 10px">Special offer</li>
-		<li style="margin-top: 10px">Special offer</li>
-	</ul>
+	<form action="users" method="post">
+		<h3>List of users for "System4Users"</h3>
+		<input type="submit" value="Show Users">
+	</form>
 </body>
 </html>

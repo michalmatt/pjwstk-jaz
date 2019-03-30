@@ -6,7 +6,7 @@
 		httpResponse.getWriter().println("Your account has been already registered. Please login now.");
 		return;
 	}
-	else if (session.getAttribute("name") != null && session.getAttribute("password") != null && session.getAttribute("email") != null) {
+	else if (session.getAttribute("user") != null) {
 		httpResponse.sendRedirect("profile.jsp");
 		return;
 	}
