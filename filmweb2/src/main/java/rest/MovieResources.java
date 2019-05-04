@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -87,6 +88,17 @@ public class MovieResources {
 		result.getComments().add(comment);
 		comment.setId(result.getComments().indexOf(comment));
 		return Response.ok(comment.getId()).build();
+	}
+	
+	@DELETE
+	@Path("/{movieId}/comment/{commentId}")
+	public Response deleteComment(@PathParam("movieId") int movieId, @PathParam("commentId") int commentId) {
+		Movie result = db.get(movieId);
+		if(result.getComments() == null) {
+			return Response.status(404).build();
+		}
+		result.getComments().remove(commentId);
+		return Response.ok().build();
 	}
 
 }
