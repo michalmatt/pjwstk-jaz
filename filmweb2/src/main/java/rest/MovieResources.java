@@ -21,7 +21,6 @@ import domain.services.MovieService;
 public class MovieResources {
 	
 	private MovieService db = new MovieService();
-	private static int currentCommentId = 1;
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -85,8 +84,8 @@ public class MovieResources {
 		if(result.getComments() == null) {
 			result.setComments(new ArrayList<Comment>());
 		}
-		comment.setId(currentCommentId++);
 		result.getComments().add(comment);
+		comment.setId(result.getComments().indexOf(comment));
 		return Response.ok(comment.getId()).build();
 	}
 

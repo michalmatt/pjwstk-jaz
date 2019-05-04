@@ -8,7 +8,6 @@ import domain.Movie;
 public class MovieService {
 	
 	private static List<Movie> db = new ArrayList<Movie>();
-	private static int currentMovieId = 1;
 	
 	public List<Movie> getAll() {
 		return db;
@@ -24,8 +23,8 @@ public class MovieService {
 	}
 	
 	public void add (Movie m) {
-		m.setId(currentMovieId++);
 		db.add(m);
+		m.setId(db.indexOf(m));
 	}
 	
 	public void update (Movie movie) {
