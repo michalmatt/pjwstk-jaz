@@ -12,6 +12,6 @@ public class TestRest {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response test(){
-		return Response.ok("rest is working").build();
+		return Response.ok("filmweb test rest is working").build();
 	}
 }
