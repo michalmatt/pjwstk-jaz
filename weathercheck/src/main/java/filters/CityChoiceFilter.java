@@ -22,7 +22,8 @@ public class CityChoiceFilter implements Filter {
 		int cityId = Integer.parseInt(request.getParameter("cityName"));
 		if (cityId != 6695624 && cityId != 3099434 && cityId != 3094802
 				&& cityId != 3081368 && cityId != 3088171
-				&& cityId != 3093133 && cityId != 3096472) {
+				&& cityId != 3093133 && cityId != 3096472
+				&& cityId != 766307 && cityId != 3080414) {
 			response.getWriter().println("Error: city name not on the list.");
 		}
 		else {
