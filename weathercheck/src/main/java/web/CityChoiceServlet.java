@@ -26,7 +26,7 @@ public class CityChoiceServlet extends HttpServlet {
 		writer.println("Speed of wind: " + c.getWind().getSpeed() + " meter/sec");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int cityId = Integer.parseInt(request.getParameter("cityName"));
 		CityWeatherClient client = new CityWeatherClient();
 		CityWeather weather = client.getByCityId(cityId);

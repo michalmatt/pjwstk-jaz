@@ -20,6 +20,7 @@
 					<option value=3088171>Poznan</option>
 					<option value=3093133>Lodz</option>
 					<option value=3096472>Katowice</option>
+					<option value=0>Error test</option>
 					</select>
 				</td>
 			</tr>
