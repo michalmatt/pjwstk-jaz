@@ -26,7 +26,8 @@ public class testCityChoiceFilter extends Mockito {
 		when(response.getWriter()).thenReturn(writer);
 		
 		new CityChoiceFilter().doFilter(request, response, chain);
-		verify(response).getWriter().println("Error: city name not on the list.");
+		verify(response).getWriter();
+		verify(writer).println("Error: city name not on the list.");
 	}
 
 }
