@@ -13,6 +13,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -30,6 +31,18 @@ public class ProductsResources {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Product> getAll() {
 		return em.createNamedQuery("product.all", Product.class).getResultList();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getByQuery(@QueryParam("query") String query) {
+		List<Product> result = em.createNamedQuery("product.name", Product.class)
+				.setParameter("productName", query)
+				.getResultList();
+		if(result == null){
+			return Response.status(404).build();
+		}
+		return Response.ok(result).build();
 	}
 	
 	@POST

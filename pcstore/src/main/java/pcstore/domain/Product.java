@@ -17,7 +17,8 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @NamedQueries({
 	@NamedQuery(name="product.all", query="SELECT p FROM Product p"),
-	@NamedQuery(name="product.id", query="FROM Product p WHERE p.id=:productId")
+	@NamedQuery(name="product.id", query="FROM Product p WHERE p.id=:productId"),
+	//@NamedQuery(name="product.name", query="FROM Product p WHERE p.name CONTAINS productName")
 })
 public class Product {
 	
